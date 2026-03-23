@@ -2,6 +2,8 @@
 
 *By Eason Chen — PhD Student at Carnegie Mellon University*
 
+![Hero](./images/2026-03-23-hero-cover.png)
+
 ---
 
 ## The Trust Problem
@@ -51,6 +53,8 @@ Here's how they compare:
 
 *Synthesized from Benisi et al. (2020) and Danezis et al. (2025).*
 
+![Decentralized Storage Comparison](./images/2026-03-23-comparison-table-v2.png)
+
 A pattern emerges: every existing system makes a painful trade-off. You get efficiency *or* trustless verification *or* fast retrieval — pick two.
 
 ---
@@ -58,6 +62,8 @@ A pattern emerges: every existing system makes a painful trade-off. You get effi
 ## Walrus: What's Different
 
 Walrus tries to break this three-way trade-off with **Red Stuff**, a two-dimensional erasure coding protocol (Danezis et al., 2025). The "two-dimensional" part is key — it's not just an incremental improvement over Reed-Solomon, but a fundamentally different encoding geometry.
+
+![1D vs 2D Erasure Coding — Red Stuff](./images/2026-03-23-1d-vs-2d-erasure.png)
 
 **Self-healing recovery.** In traditional erasure coding, when a storage node goes offline, replacing its shard requires downloading data from *all* remaining nodes — transferring O(|blob|) across the network. Red Stuff's 2D structure means a replacement node only needs data proportional to its own shard: O(|blob|/n). This makes the network self-healing — nodes recover lost data from their neighbors without centralized coordination, and without the bandwidth explosion that makes other systems fragile under churn.
 
@@ -70,6 +76,8 @@ And because Walrus runs on Sui, storage becomes **programmable**. Access control
 ---
 
 ## Beyond Blockchain: Why This Matters to Everyone
+
+![Verifiable Data Applications](./images/2026-03-23-beyond-blockchain.png)
 
 It's easy to dismiss verifiable data as a crypto-native concern. But the need extends far beyond NFTs and DeFi — into systems that affect billions of people who have never touched a wallet.
 
